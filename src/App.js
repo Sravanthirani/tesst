@@ -92,7 +92,7 @@ const App = () => {
     const formData = new FormData();
     formData.append('image', dataURItoBlob(imageData));
     try {
-      const response = await fetch('http://localhost:5000/analyze', {
+      const response = await fetch('https://test-backend-production-1a07.up.railway.app/analyze', {
         method: 'POST',
         body: formData,
       });
@@ -125,7 +125,7 @@ const App = () => {
 
   const generateOutput = async () => {
     try {
-      const response = await fetch('http://localhost:5000/generate', { method: 'GET' });
+      const response = await fetch('https://test-backend-production-1a07.up.railway.app/generate', { method: 'GET' });
       const data = await response.json();
       setGeneratedOutput(data.generatedText);
       setShowGeneratedOutput(true);
